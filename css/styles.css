@@ -4,6 +4,15 @@
     font-family: 'Roboto',sans-serif;
 }
 
+#progress-bar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    height: 15px;
+    background-color: #3882f6;
+}
+
 body {
     margin: 0;
     padding: 0;

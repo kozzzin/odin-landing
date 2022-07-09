@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
+    <div id="progress-bar"></div>
     <div id="header-container">
         <div id="header" class="max-width">
             <div id="logo">
@@ -72,6 +73,32 @@
             <button>Sign up!</button>
         </div>
     </div>
+
+
+    <script>
+        let body = document.body;
+        let html = document.documentElement;
+
+        let height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+        const bar = document.querySelector('#progress-bar');
+
+        // divide visible screen to total scroll size
+        
+        const ratio = window.innerHeight / height;
+
+        const startBarWidth = Math.round(window.screen.width * ratio);
+
+        // bar.style.width = startBarWidth + 'px';
+
+        let scroll = window.pageYOffset;
+
+        window.addEventListener('scroll', (e) => {
+            bar.style.width = ((window.innerHeight + window.pageYOffset) / height) * window.screen.width + 'px';
+        });
+
+    </script>
     
 </body>
 </html>
